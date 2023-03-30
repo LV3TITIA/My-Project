@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
@@ -12,10 +13,15 @@ public class TrayControler : MonoBehaviour
     [SerializeField]
     public Transform _contactPoint;
 
+    //[SerializeField]
+    //private GameObject LooseMenu;
+
     // Start is called before the first frame update
     void Start()
     {
         _TrayRigidbody = GetComponent<Rigidbody>();
+        //menuManager = GetComponent<MenuManager>();
+        //LooseMenu = GetComponentInChildren<GameObject>();
     }
 
 
@@ -42,10 +48,13 @@ public class TrayControler : MonoBehaviour
         if (collision.gameObject.CompareTag("Terrain"))
         {
             Time.timeScale = 0;
-            Debug.Log("Game Over !");
+            //Debug.Log("Game Over !");
+            //LooseMenu.SetActive(true);
+            MenuManager.instance.OnPlayerLoose();
         }
     }
 
+    private MenuManager menuManager;
     private Rigidbody _TrayRigidbody;
-    private GameObject Tray;
+    //private GameObject Tray;
 }
