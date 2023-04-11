@@ -50,11 +50,11 @@ public class TrayControler : MonoBehaviour
             Time.timeScale = 0;
             //Debug.Log("Game Over !");
             //LooseMenu.SetActive(true);
-            MenuManager.instance.OnPlayerLoose();
+            GameOverManager.instance.Loose();
         }
     }
 
-    private MenuManager menuManager;
+    private GameOverManager gameOverManager;
     private Rigidbody _TrayRigidbody;
     //private GameObject Tray;
 }

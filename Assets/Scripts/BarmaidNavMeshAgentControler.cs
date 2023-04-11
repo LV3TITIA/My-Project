@@ -15,6 +15,7 @@ public class BarmaidNavMeshAgentControler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Start du NavMeshAgent Controller");
         agent = GetComponent<NavMeshAgent>();
         //destination = agent.destination;
         agent.SetDestination(goal.position);
@@ -28,11 +29,9 @@ public class BarmaidNavMeshAgentControler : MonoBehaviour
         {
             //_arrived = true;
             //Debug.Log("You're Win !");
-            // WinMenu.SetActive(true);
-            MenuManager.instance.OnPlayerWin();
+            //GameOverManager.instance.OnPlayerWin();
         }
     }
-    public MenuManager menuManager;
     private NavMeshAgent agent;
     private Vector3 destination;
     //private bool _arrived = false;
